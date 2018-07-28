@@ -1,17 +1,22 @@
 <?php
 
-  class textToImage
+  namespace App;
+  /**
+   * [textToImage]
+   * @author Adzkar Fauzie <adzkarfauzie02@gmail.com>
+   */
+  class TextToImage
   {
     private $img;
 
     // createImage
-    function createImage($text, $fontSize = 40, $imgWidth = 160, $imgHeight = 60) {
+    public function createImage($text, $fontSize = 40, $imgWidth = 160, $imgHeight = 60) {
 
     	// font path
     	$font = __DIR__.'/fonts/font.ttf';
 
     	// create the image
-    	$this->img = imagecreatetruecolor($imgWidth, $imgHeight);
+    	$this->img = @imagecreatetruecolor($imgWidth, $imgHeight);
 
     	// color
     	$white = imagecolorallocate($this->img, 255, 255, 255);
@@ -31,8 +36,8 @@
 
     // display image
     function showImage() {
-    	header('Content-type: image/png');
-    	return imagepng($this->img);
+    	header('Content-type: image/jpeg');
+    	return imagejpeg($this->img);
     }
 
     // save image as png

@@ -1,0 +1,17 @@
+{
+    "name": "adzkar/simple-php-captcha",
+    "description": "A simple php captcha",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "adzkar",
+            "email": "adzkarfauzie02@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "App\\": "App/"
+      }
+    }
+}
